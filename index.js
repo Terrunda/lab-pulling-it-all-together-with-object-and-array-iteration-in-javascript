@@ -114,3 +114,40 @@ function gameObject() {
         },
     };
 }
+
+function numPointsScored(playerName) {
+    const gameData = gameObject();
+    const homeTeamPlayers = gameData.home.players
+    const awayTeamPlayers = gameData.away.players
+
+    for (let player in homeTeamPlayers) {
+        if (player == playerName) {
+            return homeTeamPlayers[`${player}`].points;
+        }
+    }
+
+    for (let player in awayTeamPlayers) {
+        if (player == playerName) {
+            return awayTeamPlayers[`${player}`].points;
+        }
+    }
+}
+
+function shoeSize(playerName) {
+    const gameData = gameObject();
+    const homeTeamPlayers = gameData.home.players
+    const awayTeamPlayers = gameData.away.players
+
+    
+    for (let player in homeTeamPlayers) {
+        if (player == playerName) {
+            return homeTeamPlayers[`${player}`].shoe;
+        }
+    }
+
+    for (let player in awayTeamPlayers) {
+        if (player == playerName) {
+            return awayTeamPlayers[`${player}`].shoe;
+        }
+    }
+}
