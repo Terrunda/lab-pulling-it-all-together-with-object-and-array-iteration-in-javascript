@@ -326,3 +326,33 @@ function playerWithLongestName() {
     return result;
 }
 
+function doesLongNameStealATon() {
+    const gameData = gameObject();
+    const homeTeamPlayers = gameData.home.players;
+    const awayTeamPlayers = gameData.away.players;
+    const longNamePlayer = playerWithLongestName();
+    let mostSteals = 0;
+    let result = undefined;
+
+    for (let homePlayer in homeTeamPlayers) {
+        const playerSteals = homeTeamPlayers[`${homePlayer}`].steals;
+        if (playerSteals > mostSteals) {
+            mostSteals = playerSteals;
+            result = homePlayer;
+        }
+    }
+
+    for (let awayPlayer in awayTeamPlayers) {
+        const playerSteals = awayTeamPlayers[`${awayPlayer}`].steals;
+        if (playerSteals > mostSteals) {
+            mostSteals = playerSteals;
+            result = awayPlayer;
+        }
+    }
+
+    if (result == longNamePlayer) {
+        return true;
+    } else {
+        return false;
+    }
+}
