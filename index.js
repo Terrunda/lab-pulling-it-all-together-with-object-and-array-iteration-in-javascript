@@ -134,7 +134,7 @@ function numPointsScored(playerName) {
 }
 
 function shoeSize(playerName) {
-    var gameData = gameObject();
+    const gameData = gameObject();
     const homeTeamPlayers = gameData.home.players
     const awayTeamPlayers = gameData.away.players
 
@@ -174,4 +174,48 @@ function teamNames() {
     let arr = [];
     arr.push(homeTeamName, awayTeamName);
     return arr;
+}
+
+function playerNumbers(teamName) {
+    const gameData = gameObject();
+    const homeTeamName = gameData.home.teamName;
+    const awayTeamName = gameData.away.teamName;
+
+
+    const homeTeamPlayers = gameData.home.players;
+    const awayTeamPlayers = gameData.away.players;
+
+    if (teamName == homeTeamName) {
+        let jerseyArray = [];
+        for (let player in homeTeamPlayers) {
+            jerseyArray.push(homeTeamPlayers[`${player}`].number);
+        }
+        return jerseyArray;
+    }
+
+    if (teamName == awayTeamName) {
+        let jerseyArray = [];
+        for (let player in awayTeamPlayers) {
+            jerseyArray.push(awayTeamPlayers[`${player}`].number);
+        }
+        return jerseyArray;
+    }
+}
+
+function playerStats(playerName) {
+    const gameData = gameObject();
+    const homeTeamPlayers = gameData.home.players;
+    const awayTeamPlayers = gameData.away.players;
+    
+    for (let player in homeTeamPlayers) {
+        if (player == playerName) {
+            return homeTeamPlayers[`${player}`];
+        }
+    }
+
+    for (let player in awayTeamPlayers) {
+        if (player == playerName) {
+            return awayTeamPlayers[`${player}`];
+        }
+    }
 }
