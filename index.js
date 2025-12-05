@@ -219,3 +219,27 @@ function playerStats(playerName) {
         }
     }
 }
+
+function bigShoeRebounds() {
+    const gameData = gameObject();
+    const homeTeamPlayers = gameData.home.players;
+    const awayTeamPlayers = gameData.away.players;
+
+    let playerObject = {
+        ...homeTeamPlayers,
+        ...awayTeamPlayers
+    }
+
+    let largestShoeSize = 0;
+    let reboundsForLargestShoe = 0;
+    let playerValues = Object.values(playerObject)
+
+    for (let playerStats of playerValues) {
+        const currentShoeSize = playerStats.shoe;
+        if (currentShoeSize > largestShoeSize) {
+            largestShoeSize = currentShoeSize;
+            reboundsForLargestShoe = playerStats.rebounds;
+        }
+        return reboundsForLargestShoe;
+    }
+}
