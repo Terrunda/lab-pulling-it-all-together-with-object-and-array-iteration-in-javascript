@@ -134,7 +134,7 @@ function numPointsScored(playerName) {
 }
 
 function shoeSize(playerName) {
-    const gameData = gameObject();
+    var gameData = gameObject();
     const homeTeamPlayers = gameData.home.players
     const awayTeamPlayers = gameData.away.players
 
@@ -150,4 +150,28 @@ function shoeSize(playerName) {
             return awayTeamPlayers[`${player}`].shoe;
         }
     }
+}
+
+function teamColors(teamName) {
+    const gameData = gameObject();
+    const homeTeam = gameData.home.teamName;
+    const awayTeam = gameData.away.teamName;
+
+    if (teamName == homeTeam) {
+        return gameData.home.colors;
+    }
+
+       if (teamName == awayTeam) {
+        return gameData.away.colors;
+    }
+}
+
+function teamNames() {
+    const gameData = gameObject();
+    const awayTeamName = gameData.away.teamName;
+    const homeTeamName = gameData.home.teamName;
+
+    let arr = [];
+    arr.push(homeTeamName, awayTeamName);
+    return arr;
 }
