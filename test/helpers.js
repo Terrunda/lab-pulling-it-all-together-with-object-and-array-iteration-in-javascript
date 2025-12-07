@@ -6,6 +6,7 @@ const jsdom = require('mocha-jsdom')
 const path = require('path')
 const babel = require('babel-core');
 const assert = require('assert');
+const jest = require("jest");
 
 const html = fs.readFileSync(path.resolve(__dirname, '..', 'index.html'), 'utf-8')
 const js = fs.readFileSync(path.resolve(__dirname, '..', 'index.js'), 'utf-8')
@@ -32,5 +33,6 @@ module.exports = {
     html,
     babelResult,
     src,
+    jest,
     js
 }

@@ -1,5 +1,11 @@
  const {numPointsScored, shoeSize, teamColors, teamNames, playerNumbers, playerStats, bigShoeRebounds, mostPointsScored, winningTeam, playerWithLongestName, doesLongNameStealATon} = require("../index.js");
 
+describe("Test case for numPointsScored",() => {
+  test("Normal case for numPointsScored", () => {
+    expect(numPointsScored("Alan Anderson").toBe(22));
+  });
+})
+ 
 describe('Basketball Stats', function () {
   
   describe('numPointsScored', function () {
