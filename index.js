@@ -240,8 +240,8 @@ function bigShoeRebounds() {
             largestShoeSize = currentShoeSize;
             reboundsForLargestShoe = playerStats.rebounds;
         }
-        return reboundsForLargestShoe;
     }
+     return reboundsForLargestShoe;
 }
 
 

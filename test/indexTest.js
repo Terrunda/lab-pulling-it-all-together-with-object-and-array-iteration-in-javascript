@@ -1,4 +1,5 @@
  const {numPointsScored, shoeSize, teamColors, teamNames, playerNumbers, playerStats, bigShoeRebounds, mostPointsScored, winningTeam, playerWithLongestName, doesLongNameStealATon} = require("../index.js");
+
 describe('Basketball Stats', function () {
   
   describe('numPointsScored', function () {
