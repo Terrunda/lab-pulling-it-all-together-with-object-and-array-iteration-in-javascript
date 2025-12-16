@@ -225,10 +225,10 @@ function bigShoeRebounds() {
     const homeTeamPlayers = gameData.home.players;
     const awayTeamPlayers = gameData.away.players;
 
-    let playerObject = {
+    const playerObject = {
         ...homeTeamPlayers,
         ...awayTeamPlayers
-    }
+    };
 
     let largestShoeSize = 0;
     let reboundsForLargestShoe = 0;
@@ -254,7 +254,7 @@ function mostPointsScored() {
     const playerObject = {
         ...homeTeamPlayers,
         ...awayTeamPlayers
-    }
+    };
 
     let playerStatsArray = Object.values(playerObject);
     
@@ -311,7 +311,7 @@ function playerWithLongestName() {
     const playerObject = {
         ...homeTeamPlayers,
         ...awayTeamPlayers
-    }
+    };
 
     let playerNameLength = 0;
     let result = undefined;
